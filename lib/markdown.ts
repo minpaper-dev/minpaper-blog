@@ -8,8 +8,8 @@ marked.setOptions({
 
 // 마크다운을 HTML로 변환하는 함수
 export function markdownToHtml(markdown: string): string {
-  // 먼저 기본 변환
-  let html = marked(markdown);
+  // 먼저 기본 변환 (동기적으로 처리)
+  let html = marked.parse(markdown) as string;
 
   // 헤딩에 ID 추가하는 정규식 처리
   let headingIndex = 0;
